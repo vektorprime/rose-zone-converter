@@ -1,0 +1,25 @@
+[package]
+name = "rose-zone-converter"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy = { version = "0.16", default-features = false, features = ["bevy_asset", "bevy_pbr", "bevy_render", "bevy_core_pipeline", "bevy_log", "multi_threaded", "png", "dds"] }
+anyhow = "1.0"
+image = { version = "0.24", features = ["dds", "png"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+rose-data = { path = "C:/Users/vicha/RustroverProjects/rose-offline/rose-data" }
+rose-file-readers = { path = "C:/Users/vicha/RustroverProjects/rose-offline/rose-file-readers" }
+glam = "0.29"
+bytemuck = "1.13"
+clap = { version = "4.0", features = ["derive"] }
+log = "0.4"
+env_logger = "0.10"
+walkdir = "2.3"
+rayon = "1.10"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
